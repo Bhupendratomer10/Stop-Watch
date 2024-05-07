@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Watch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Stylish&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href= "style.css">
+    <link rel="stylesheet" href= "countDown.css">
+</head>
+<body>
+    <div class="flip-card">
+      <!-- Front Page of flip animation  -->
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <!-- Stop Watch HTML structure -->
+            <div class="container">
+              <!-- Title of StopWatch -->
+                <h1>Stop Watch</h1>
+                <!-- StopWatch Display -->
+                <div id="time">
+                    <span id="hr" class="digit">00</span>
+                    <span class="txt">hr</span>
+                    <span id="min" class="digit">00</span>
+                    <span class="txt">min</span>
+                    <span id="sec" class="digit">00</span>
+                    <span class="txt">sec</span>
+                    <span id="count" class="digit">00</span>
+                </div>
+                <!-- StopWatch Buttons -->
+                <div id="btns">
+                    <button class="btn" id="start">Start</button>
+                    <button class="btn" id="stop">Pause</button>
+                    <button class="btn" id="reset">Reset</button>
+                </div>
+            </div>
+          </div>
+          <!-- Back Page of Flip Animation -->
+          <div class="flip-card-back" style=" background-color: rgb(225, 179, 120);">
+            <div>
+              <!-- CountDown Timer Title -->
+                <h1>Count Down Timer</h1>
+                <!-- Count Down Timer Display -->
+                <div class="container-count-down">
+                  <!-- Hour Display -->
+                  <div class="container-segment">
+                    <!-- Hour Display Title -->
+                    <div class="segment-title">Hours</div>
+                    <div class="segment">
+                      <!-- top 50% of hour display flip card -->
+                      <div class="flip-cd" data-hours-tens>
+                        <div class="top">0</div>
+                        <div class="bottom">0</div>
+                      </div>
+                      <!-- bottom 50% of display flip card -->
+                      <div class="flip-cd" data-hours-ones>
+                        <div class="top">0</div>
+                        <div class="bottom">0</div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Minute Display -->
+                  <div class="container-segment">
+                    <!-- Minute Display Title -->
+                    <div class="segment-title">Minutes</div>
+                    <div class="segment">
+                      <!-- top 50% of minutes display flip card -->
+                      <div class="flip-cd" data-minutes-tens>
+                        <div class="top">0</div>
+                        <div class="bottom">0</div>
+                      </div>
+                      <!-- bottom 50% of minutes display flip card -->
+                      <div class="flip-cd" data-minutes-ones>
+                        <div class="top">0</div>
+                        <div class="bottom">0</div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Seconds Display -->
+                  <div class="container-segment">
+                    <!-- Seconds Display Title -->
+                    <div class="segment-title">Seconds</div>
+                    <div class="segment">
+                       <!-- top 50% of seconds display flip card -->
+                      <div class="flip-cd" data-seconds-tens>
+                        <div class="top">0</div>
+                        <div class="bottom">0</div>
+                      </div>
+                      <!-- bottom 50% of seconds display flip card -->
+                      <div class="flip-cd" data-seconds-ones>
+                        <div class="top">0</div>
+                        <div class="bottom">0</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- custom input form for Hours, Minutes, Seconds custom input -->
+                <form style="margin-top: 30px;">
+                  <input type="number" name="inputHours" class="collectHr" placeholder="Hours" required>
+                  <input type="number" name="inputMinutes" class="collectMin" placeholder="Minutes" required>
+                  <input type="number" name="inputSeconds" class="collectSec" placeholder="Seconds" required>
+                  <!-- start and pause button for countdown -->
+                  <div id="btns" style="margin-top: 0px;">
+                    <button type="button" id="start" class="btn-input" onclick="countDownStartEvent()">Start</button>
+                    <button type="button" id="stop" class="btn-input" onclick="countDownPauseEvent()">Pause</button>
+                    <button type="button" id="reset" class="btn-input" onclick="countDownResetEvent()">Reset</button>
+                  </div>
+                </form>
+            </div> 
+          </div>
+        </div>
+      </div>
+
+    <!-- Butoon to Flip StopWatch and CountDown Timer -->
+    <div id="toggle-flip">
+        <button class="flip-btn" onclick="flipToggleCntrl()">Click Here For Count Down Timer</button>
+    </div>
+<script src= "countDown.js"></script>
+<script src= "script.js"></script>
+</body>
+</html>
